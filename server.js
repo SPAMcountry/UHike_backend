@@ -10,8 +10,8 @@ const PORT = process.env.PORT;
 const app = express();
 app.use(cors()); 
 
-const location = require('./lib/location/fetchLocationData');
-const weather = require('./lib/weather/fetchweatherData');
+const location = require('./lib/location/fetchLocationData.js');
+const weather = require('./lib/weather/fetchweatherData.js');
 
 
 
