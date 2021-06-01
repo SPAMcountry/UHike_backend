@@ -13,6 +13,8 @@ app.use(cors());
 const location = require('./lib/location/fetchLocationData');
 const weather = require('./lib/weather/fetchweatherData');
 
+
+
 app.get('/location', async (request, response) => {
     let searchQuery = request.query.search;
     let locationData = await location.fetchLocationData(searchQuery); 
