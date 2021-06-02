@@ -3,12 +3,12 @@
 require('dotenv').config(); 
 const axios = require('axios');
 const express = require('express'); 
-const cors = require('cors');
+
 const PORT = process.env.PORT; 
 
 
 const app = express();
-app.use(cors()); 
+
 
 const location = require('./lib/location/fetchLocationData.js');
 const weather = require('./lib/weather/fetchweatherData.js');
