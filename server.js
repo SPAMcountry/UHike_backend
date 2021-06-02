@@ -11,26 +11,25 @@ const app = express();
 app.use(cors()); 
 
 const location = require('./lib/location/fetchLocationData.js');
-// const weather = require('./lib/weather/fetchweatherData.js');
+const weather = require('./lib/weather/fetchweatherData.js');
 
 
 
 app.get('/location', async (request, response) => {
     let searchQuery = request.query.search;
     let locationData = await location.fetchLocationData(searchQuery); 
-    console.log(locationData);
+    console.log(locationData[0]);
     response.send(locationData); 
 })
 
-// app.get('/weather', weatherHandler); 
-// function weatherHandler(request, response) {
-//     const {lat, lon} = request.query; 
-//     weather(lat, lon)
-//     .then(summaries => response.send(summaries))
-//     .catch((error) => {
-//         console.error(error); 
-//         response.status(200).send('Sorry, something went wrong')
-//     })
-// }
+app.get('/weather', async (request, response) => {
+    let lat = request.query.lat;
+    let lon = request.query.lon;
+    console.log(lat, lon); 
+    let weatherData = await weather.fetchWeatherData(lat, lon);
+    console.log(weatherData[0])
+    response.send(weatherData);
+});
+
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
