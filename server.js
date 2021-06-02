@@ -18,8 +18,8 @@ const weather = require('./lib/weather/fetchweatherData.js');
 app.get('/location', async (request, response) => {
     let searchQuery = request.query.search;
     let locationData = await location.fetchLocationData(searchQuery); 
-    console.log(locationData);
-    response.send(locationData); 
+    console.log(locationData[0]);
+    response.send(locationData[0]); 
 })
 
 app.get('/weather', weatherHandler); 
