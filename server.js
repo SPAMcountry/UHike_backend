@@ -12,7 +12,8 @@ app.use(cors());
 
 const location = require('./lib/location/fetchLocationData.js');
 const weather = require('./lib/weather/fetchweatherData.js');
-
+// const trail = require('./lib/trails/fetchTrail');
+const { ResponsiveEmbed } = require('react-bootstrap');
 
 
 app.get('/location', async (request, response) => {
@@ -30,6 +31,13 @@ app.get('/weather', async (request, response) => {
     console.log(weatherData[0])
     response.send(weatherData);
 });
-
+// app.get('/trail', async (request, response) => {
+//     let lat = request.query.lat; 
+//     let lon = request.query.lon;
+//     console.log(lat, lon, 'trail data'); 
+//     let trailData = await trail.fetchTrail(lat, lon);
+//     console.log(trialData[0]);
+//     response.send(trailData); 
+// })
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
