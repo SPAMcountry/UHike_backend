@@ -13,7 +13,7 @@ app.use(cors());
 const location = require('./lib/location/fetchLocationData.js');
 const weather = require('./lib/weather/fetchweatherData.js');
 // const trail = require('./lib/trails/fetchTrail');
-const { ResponsiveEmbed } = require('react-bootstrap');
+// const { ResponsiveEmbed } = require('react-bootstrap');
 
 
 app.get('/location', async (request, response) => {
