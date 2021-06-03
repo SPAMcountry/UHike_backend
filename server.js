@@ -9,8 +9,8 @@ const mongoose = require('mongoose');
 
 const app = express();
 app.use(cors()); 
-const Trail = require('./lib/trails/fetchTrail.js');
 
+const Trail = require('./lib/trails/fetchTrail.js');
 const location = require('./lib/location/fetchLocationData.js');
 const weather = require('./lib/weather/fetchweatherData.js');
 // const trail = require('./lib/trails/fetchTrail');
@@ -45,7 +45,11 @@ app.get('/weather', async (request, response) => {
     response.send(weatherData);
 });
 
-app.post('/trail', Trail.addTrailData);
+app.get('/trail', Trail.getAllTrail);
+app.post('/trail', Trail.AddTrail);
+// app.delete('/trail', Trail.DeleteTrail);
+// app.post('/trail', Trail.addTrailData);
+// app.delete('/trail/:index', Trail.deleteTrail);
 
 // app.get('/trail', async (request, response) => {
 //     let lat = request.query.lat; 
@@ -55,3 +59,4 @@ app.post('/trail', Trail.addTrailData);
 //     console.log(trialData[0]);
 //     response.send(trailData); 
 // })
+app.listen(PORT, () => console.log(`SERVER IS UP on ${PORT}`));
