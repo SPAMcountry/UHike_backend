@@ -1,12 +1,12 @@
 'use strict'; 
 
 require('dotenv').config(); 
-const axios = require('axios');
+// const axios = require('axios');
 const express = require('express'); 
 const cors = require('cors');
 const PORT = process.env.PORT; 
 const mongoose = require('mongoose');
-const TrailModel = require('./lib/Model/Model'); 
+// const TrailModel = require('./lib/model/Model'); 
 
 const app = express();
 app.use(cors()); 
