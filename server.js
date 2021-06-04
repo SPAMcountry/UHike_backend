@@ -4,7 +4,7 @@ require('dotenv').config();
 const axios = require('axios');
 const express = require('express'); 
 const cors = require('cors');
-const APP_SERVER = process.env.APP_SERVER; 
+const PORT = process.env.PORT; 
 const mongoose = require('mongoose');
 const TrailModel = require('./lib/Model/Model'); 
 
@@ -89,4 +89,4 @@ app.post('/users', Trail.addUser);
 //     console.log(trialData[0]);
 //     response.send(trailData); 
 // })
-app.listen(APP_SERVER, () => console.log(`SERVER IS UP on ${APP_SERVER}`));
+app.listen(PORT, () => console.log(`SERVER IS UP on ${PORT}`));
