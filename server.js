@@ -6,6 +6,7 @@ const express = require('express');
 const cors = require('cors');
 const PORT = process.env.PORT; 
 const mongoose = require('mongoose');
+const TrailModel = require('./lib/Model/Model'); 
 
 const app = express();
 app.use(cors()); 
@@ -45,11 +46,39 @@ app.get('/weather', async (request, response) => {
     response.send(weatherData);
 });
 
+// const 
+
+
 app.get('/trail', Trail.getAllTrail);
 app.post('/trail', Trail.AddTrail);
-// app.delete('/trail', Trail.DeleteTrail);
+app.post('/users', Trail.addUser);
+
+
+// app.delete('/trail/:id', getTrails, async (req, res) => {
+//     try{
+//         await res.item0.remove()
+//         res.json({message:'deleted'})
+//     }catch(err){
+//         res.status(500).json({message: err.message})
+//     }
+// });
+
+// async function getTrails(req, res, next) {
+//     let itemO
+//     try {
+//     itemO = await TrailModel.findById(req.params._id)
+//     if (itemO == null) {
+//     return res.status(404).json({ message: 'Cannot find' })
+//     }
+// } catch (err) {
+//     return res.status(500).json({ message: err.message })
+// }
+// res.itemO = itemO
+// next()
+// }
+
 // app.post('/trail', Trail.addTrailData);
-// app.delete('/trail/:index', Trail.deleteTrail);
+app.delete('/trail/:index', Trail.deleteTrail);
 
 // app.get('/trail', async (request, response) => {
 //     let lat = request.query.lat; 
