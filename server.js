@@ -11,6 +11,7 @@ const TrailModel = require('./lib/Model/Model');
 const app = express();
 app.use(cors()); 
 
+
 const Trail = require('./lib/trails/fetchTrail.js');
 const location = require('./lib/location/fetchLocationData.js');
 const weather = require('./lib/weather/fetchweatherData.js');
