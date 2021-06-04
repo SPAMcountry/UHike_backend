@@ -78,7 +78,7 @@ app.post('/users', Trail.addUser);
 // }
 
 // app.post('/trail', Trail.addTrailData);
-app.delete('/trail/:index', Trail.deleteTrail);
+// app.delete('/trail/:index', Trail.deleteTrail);
 
 // app.get('/trail', async (request, response) => {
 //     let lat = request.query.lat; 
